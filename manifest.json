@@ -1,6 +1,6 @@
 {
-  "name": "Getting Started Example",
-  "description": "Build an Extension!",
+  "name": "Salesforce app launcher opener",
+  "description": "Open salesforce app launcher by shortcut",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
