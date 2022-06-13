@@ -35,7 +35,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://ms0130k.github.io/*", "https://*.force.com/*"],
+      "matches": ["https://*.force.com/*"],
       "js": ["content-script.js"]
     }
   ]
