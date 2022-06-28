@@ -17,10 +17,19 @@ const focusQuickFind = () => {
   document.querySelector('input[placeholder="Quick Find"]').focus();
 };
 
+const openThisObjectManager = () => {
+  const objectName = location.pathname.split('/')[3];
+  window.open(
+    `${location.origin}/lightning/setup/ObjectManager/${objectName}/view`
+  );
+};
+
 chrome.runtime.onMessage.addListener((message) => {
   if (message === 'open-app-launcher') {
     openAppLauncher();
   } else if (message === 'focus-quick-find') {
     focusQuickFind();
+  } else if (message === 'open-object-manager') {
+    openThisObjectManager();
   }
 });

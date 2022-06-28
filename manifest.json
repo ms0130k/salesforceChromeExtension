@@ -1,7 +1,7 @@
 {
   "name": "Salesforce app launcher opener",
   "description": "Open salesforce app launcher by shortcut",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
@@ -31,6 +31,10 @@
     "focus-quick-find": {
       "suggested_key": "Alt+Q",
       "description": "Focus on quick find"
+    },
+    "open-object-manager": {
+      "suggested_key": "Ctrl+Shift+Q",
+      "description": "Open this object manager"
     }
   },
   "content_scripts": [
