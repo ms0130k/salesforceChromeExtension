@@ -1,7 +1,7 @@
 {
   "name": "Salesforce app launcher opener",
   "description": "Open salesforce app launcher by shortcut",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
@@ -35,6 +35,10 @@
     "open-object-manager": {
       "suggested_key": "Ctrl+Shift+Q",
       "description": "Open this object manager"
+    },
+    "open-setup-flows": {
+      "suggested_key": "Alt+Shift+Q",
+      "description": "Open setup flows"
     }
   },
   "content_scripts": [

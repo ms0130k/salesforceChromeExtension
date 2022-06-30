@@ -1,5 +1,10 @@
 'use strict';
 
+console.log('tttttttttttttttttttttttttttt');
+console.log('tttttttttttttttttttttttttttt');
+console.log('tttttttttttttttttttttttttttt');
+console.log('tttttttttttttttttttttttttttt');
+
 const openAppLauncher = () => {
   const setupApp = document.querySelector(
     '.salesforceIdentityAppLauncherHeader'
@@ -24,6 +29,24 @@ const openThisObjectManager = () => {
   );
 };
 
+const openPageEdit = () => {
+  const setupButtonClassName =
+    'menuTriggerLink slds-button slds-button_icon slds-button_icon slds-button_icon-container slds-button_icon-small slds-global-actions__setup slds-global-actions__item-action';
+  const setupButton = document.getElementsByClassName(setupButtonClassName)[0];
+  if (setupButton) {
+    setupButton.click();
+    window.setTimeout(() => {
+      const pageEditAnchor = document.querySelector('[data-id=edit-page]');
+      if (pageEditAnchor) location.href = pageEditAnchor.href;
+    }, 1000);
+  }
+};
+
+const openSetupFlows = () => {
+  console.log(`${location.origin}/lightning/setup/Flows/home`);
+  window.open(`${location.origin}/lightning/setup/Flows/home`);
+};
+
 chrome.runtime.onMessage.addListener((message) => {
   if (message === 'open-app-launcher') {
     openAppLauncher();
@@ -31,5 +54,7 @@ chrome.runtime.onMessage.addListener((message) => {
     focusQuickFind();
   } else if (message === 'open-object-manager') {
     openThisObjectManager();
+  } else if (message === 'open-setup-flows') {
+    openSetupFlows();
   }
 });
