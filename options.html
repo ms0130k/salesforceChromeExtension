@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="button.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>단축키 설정</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/options.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   </head>
   <body>
-    <div>You can edit shortcuts on 'chrome://extensions/shortcuts'</div>
-    <div>Qtrl + Q : open app launcher</div>
-    <div>Alt + Q : focus on 'Quick find' in setup page</div>
-    <div>Qtrl + Shift + Q : open this object manager</div>
-    <div>Alt + Shift + Q : open setup flows</div>
+    <div class="border">
+      <div id="defaultList" class="type-section">
+        <h1 class="key-type">기본</h1>
+      </div>
+      <div id="setupList" class="type-section">
+        <h1 class="key-type">*.force.com/lightning/setup/</h1>
+        <span id="questionMark" class="material-symbols-outlined question-mark"> help </span>
+        <div id="helpSetupArea" class="help-setup-area">
+          <img class="help-setup-img" src="./images/setup_url.png" alt="준비중입니다." />
+          <span>원하는 setup 페이지의 URL에서 표시 부분을 이름에 넣어주세요.</span>
+        </div>
+      </div>
+      <div class="btn-line">
+        <span id="msg"></span>
+        <button id="btnSave" class="btn-save">저장</button>
+      </div>
+    </div>
+    <script src="./script/options.js"></script>
   </body>
 </html>
