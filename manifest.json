@@ -1,12 +1,12 @@
 {
   "name": "Salesforce app launcher opener",
   "description": "Open salesforce app launcher by shortcut",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "manifest_version": 3,
   "background": {
     "service_worker": "./script/background.js"
   },
-  "permissions": ["activeTab", "tabs", "storage"],
+  "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
