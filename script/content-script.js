@@ -1,6 +1,10 @@
 'use strict';
 
 (() => {
+  let controlIsDown = false;
+  let altIsDown = false;
+  let shiftIsDown = false;
+
   const openAppLauncher = () => {
     const setupApp = document.querySelector('.salesforceIdentityAppLauncherHeader');
     const homeApp = !!document.getElementsByTagName('one-appnav')[0]
@@ -17,12 +21,19 @@
   const openThisObjectManager = () => {
     const objectName = location.pathname.split('/')[3];
     window.open(`${location.origin}/lightning/setup/ObjectManager/${objectName}/view`);
+    resetKeys();
   };
 
   const defaultFunctions = {
     'Open salesforce app launcher': openAppLauncher,
     'Focus on quick find': focusQuickFind,
     'Open this object manager': openThisObjectManager,
+  };
+
+  const resetKeys = () => {
+    controlIsDown = false;
+    altIsDown = false;
+    shiftIsDown = false;
   };
 
   //보류
@@ -45,9 +56,6 @@
     const KEY_CONTROL = 'Control';
     const KEY_ALT = 'Alt';
     const KEY_SHIFT = 'Shift';
-    let controlIsDown = false;
-    let altIsDown = false;
-    let shiftIsDown = false;
 
     const handleKeyup = function (e) {
       const key = e.key;
@@ -100,6 +108,7 @@
           defaultFunctions[matchingKeySet.name]();
         } else {
           window.open(`${location.origin}/lightning/setup/${matchingKeySet.name}`);
+          resetKeys();
         }
       }
     };
